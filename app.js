@@ -1,7 +1,7 @@
 const express = require("express");
 const config = require("./utils/config");
 const logger = require("./utils/logger");
-const middleware = require("utils/middleware");
+const middleware = require("./utils/middleware");
 const cors = require("cors");
 const notesRouter = require("./controllers/notes");
 const mongoose = require("mongoose");
@@ -21,7 +21,7 @@ const app = express();
 app.use(cors);
 app.use(express.static("build"));
 app.use(express.json());
-app.use(middleware.logger);
+app.use(middleware.requestLogger);
 
 app.use("/api/notes", notesRouter);
 
