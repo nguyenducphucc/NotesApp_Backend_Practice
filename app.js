@@ -1,3 +1,4 @@
+require("express-async-errors");
 const express = require("express");
 const config = require("./utils/config");
 const logger = require("./utils/logger");
